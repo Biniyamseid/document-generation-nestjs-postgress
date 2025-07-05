@@ -23,8 +23,15 @@ import { Document } from './documents/entities/document.entity';
         password: configService.get('DB_PASSWORD', 'password'),
         database: configService.get('DB_DATABASE', 'document_management'),
         entities: [User, Document],
-        synchronize: true, // Note: Set to false in production
+        synchronize: configService.get('NODE_ENV') !== 'production', // Only sync in development
         logging: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : false,
+        ssl: configService.get('NODE_ENV') === 'production' ? {
+          rejectUnauthorized: false, // For managed databases like AWS RDS
+        } : false,
+        // Production optimizations
+        maxQueryExecutionTime: 10000, // 10 seconds timeout
+        retryAttempts: 3,
+        retryDelay: 3000,
       }),
       inject: [ConfigService],
     }),
