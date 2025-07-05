@@ -1,0 +1,114 @@
+# Backend developper real-life test
+
+# Document Generator Backend Challenge
+
+Thank you for your interest in working with us.
+
+Below you will find all the necessary information to start your test.
+
+## Notes Before You Begin
+
+- Carefully read this entire document and follow the instructions to the **maximum** extent;
+- Create a repository on your GitHub;
+- Make your commits in your repository;
+- Send the link to your repository to Adam on Upwork;
+- You may consult Google, Stack Overflow, or a private project on your machine;
+- Feel free to ask any questions to the recruiters;
+- Use Open Broadcaster Software OBS (https://obsproject.com/) to record yourself while doing it
+    - test that everything’s working with OBS before starting the test
+    - you are not allowed to use multiple screens for the test
+    - record your whole screen + yourself
+    - send a WeTransfer to your recruiter with the video recording
+- This test has been completed in 1 hour. You can take more time if needed. You’ll be paid 1 hour at your hourly rate.
+- Stay calm, breathe, and remember, we’ve also been through this stage. Good luck! :)
+- Once you’ve completed the test, please submit your answers to [adam@tec.tech](mailto:adam@tec.tech) and [matheus@tec.tech](mailto:matheus@tec.tech)
+
+---
+
+### *Email Body for Submitting the Challenge Repository*
+
+> Your Name
+> 
+> 
+> Recruiter's Name
+> 
+> Repository Link
+> 
+> Wetransfer Link
+> 
+> LinkedIn Link
+> 
+
+---
+
+## About the Application Environment
+
+- Use Node.js
+
+---
+
+## On the Day of the Technical Interview
+
+On the scheduled date, have your application running on your local machine for testing and to demonstrate the developed features and discuss possible questions.
+
+We will conduct a code review with you as if you were already part of our team ❤️. You will explain your thought process, how you structured the project, and how it could evolve.
+
+---
+
+## Objective: Simplified Document Management System
+
+The objective is to create a **Simplified Document Management System** where users can perform the following operations:
+
+1. **Create a document**
+2. **Edit a document**
+3. **View a document**
+4. **List all documents**
+
+The system will support two types of users:
+
+- **Regular Users**: Can create, edit, view, and list documents they own.
+- **Admins**: Have access to all documents and can edit or delete any document.
+
+---
+
+### Requirements
+
+Below are the business rules essential for the Document Management System:
+
+### Documents should have the following properties:
+
+- `Title` (string, max 255 characters)
+- `Content` (text)
+- `Owner ID` (linked to the user who created the document)
+- `Created At` (timestamp)
+- `Updated At` (timestamp)
+
+### Users should have the following properties:
+
+- `Full Name` (string)
+- `Email` (unique)
+- `Password` (encrypted)
+- `Role` (`Regular User` or `Admin`)
+
+### API Endpoints should include:
+
+- **POST /documents**: To create a document (only for authenticated users)
+- **PUT /documents/{id}**: To edit a document (only for the owner or an admin)
+- **GET /documents/{id}**: To view a specific document
+- **GET /documents**: To list all documents (admins see all; regular users see only their own)
+- **DELETE /documents/{id}**: To delete a document (only for admins)
+
+### Validation Rules:
+
+- The `Title` must not be empty and must have a maximum of 255 characters
+- The `Content` must not be empty
+- Use a RESTful approach for the API
+- Ensure transactional consistency: In case of any failure during a document update, changes should not be persisted
+- Include error handling for cases such as:
+    - Invalid inputs
+    - Unauthorized access
+    - Resource not found
+
+
+
+- Implement authentication and authorization to ensure users can only perform actions allowed by their role using Mock server (e.g: https://github.com/mock-server/mockserver). The idea here is to understand what and how you know about Authentication and Authorization and how to manage it in the system. Do not be sophisticated and implement an Oauth Server, but you need to implement something that receives a token and uses it in your application.
