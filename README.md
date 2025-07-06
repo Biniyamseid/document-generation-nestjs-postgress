@@ -4,21 +4,21 @@ A simplified document management system built with NestJS, TypeORM, and PostgreS
 
 ## Features
 
-- **User Management**: Regular users and admins with role-based access
-- **Document CRUD**: Create, read, update, and delete documents
-- **Authentication**: JWT-based authentication system
-- **Authorization**: Role-based access control
-- **Validation**: Input validation and error handling
-- **API Documentation**: Swagger/OpenAPI documentation
+- User Management: Regular users and admins with role-based access
+- Document CRUD: Create, read, update, and delete documents
+- Authentication: JWT-based authentication system
+- Authorization: Role-based access control
+- Validation: Input validation and error handling
+- API Documentation: Swagger/OpenAPI documentation
 
 ## Tech Stack
 
-- **Framework**: NestJS
-- **Database**: PostgreSQL
-- **ORM**: TypeORM
-- **Authentication**: JWT + Passport
-- **Validation**: class-validator
-- **Documentation**: Swagger
+- Framework: NestJS
+- Database: PostgreSQL
+- ORM: TypeORM
+- Authentication: JWT + Passport
+- Validation: class-validator
+- Documentation: Swagger
 
 ## Installation
 
@@ -53,8 +53,8 @@ A simplified document management system built with NestJS, TypeORM, and PostgreS
 
 ## User Roles
 
-- **Regular User**: Can create, edit, view, and list their own documents
-- **Admin**: Can access all documents and delete any document
+- Regular User: Can create, edit, view, and list their own documents
+- Admin: Can access all documents and delete any document
 
 ## Running Tests
 
